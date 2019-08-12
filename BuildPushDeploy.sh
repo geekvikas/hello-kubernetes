@@ -3,7 +3,7 @@ REPO="findvikas"
 IMAGE="helloweb"
 VERSION="v0.6"
 BUILD=`date -u`
-REPLICAS=10
+REPLICAS=1
 
 ###############################################
 #####          DO NOT EDIT BELOW          #####   
