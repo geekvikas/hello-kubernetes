@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {IMAGE}
+spec:
+  selector:
+    matchLabels:
+      name: {IMAGE}
+  replicas: {REPLICAS}
+  template:
+    metadata:
+      labels:
+        name: {IMAGE}
+    spec:
+      containers:
+      - name: {IMAGE}
+        image: {REPO}/{IMAGE}:{VERSION}
+        imagePullPolicy: IfNotPresent
+        env:
+        - name: BUILD
+          value: "{BUILD}"
+        - name: VERSION
+          value: "{VERSION}"
+        ports:
+        - containerPort: 3000
